@@ -80,7 +80,95 @@ const items2 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
 const pageSize = 3;
 
 // quiz
+for (let i = pageSize; i < items2.length; i += pageSize + 1) {
+  items2.splice(i, 0, '---');
+}
+
+console.log(items2.toString());
 // pageSize에 따라 배열값 분리해서 출력
 // pageSize=2 일때는 맨끝에 --- 없어야함
 
 // 출력: a,b,c---d,e,f---g,h,i---j
+
+//12.배열값 나눠서 다시 배열로
+const items3 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
+const pageSize2 = 3;
+// quiz
+function isDivide(data = [], size = 1) {
+  const arr = [];
+
+  for (let i = 0; i < data.length; i += size) {
+    arr.push(data.slice(i, i + size));
+  }
+
+  return arr;
+}
+console.log(isDivide(items3, pageSize2));
+
+// pageSize에 따라 배열값 분리해서 출력
+
+// 출력: [ [a,b,c], [d,e,f], [g,h,i], [j] ]
+
+//13.페이지의 시작번호 구하기
+const items4 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
+const pageSize3 = 3;
+
+const getStartIndexByPage = function (page) {
+  // quiz
+  const startIndex = (page - 1) * pageSize3;
+
+  return startIndex;
+};
+
+// 출력
+getStartIndexByPage(1); // 0
+getStartIndexByPage(2); // 3
+getStartIndexByPage(3); // 6
+
+//14.전화번호 패턴 검사
+const phoneNumber = '010-1234-1234';
+
+var telRegex1 = /\d{3}-\d{4}-\d{4}/;
+
+console.log(telRegex1.test(phoneNumber));
+
+//15.객체값 변경
+const user = { nick: 'nio', age: 20, location: '제주' };
+
+// quiz
+user['age'] = 21;
+user['location'] = '부산';
+
+console.log(user);
+// 출력: {nick:'nio', age:21, name:'부산'}
+
+//16.문자열을 객체형으로
+const Text = '{"a":1, "b":2}';
+const textObject = JSON.parse(Text);
+// quiz
+console.log(textObject);
+// 출력: {a:1 , b:2}
+
+//17.json을 문자열로
+const user2 = { nick: 'nio', age: 20, location: '제주' };
+const userString = JSON.stringify(user2);
+// quiz
+console.log(userString);
+// 출력: string "{ nick: 'nio', age: 20, location: '제주' }"
+
+//18. 새로운 배열 생성
+const items5 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//quiz
+const newArr = items5.filter((num) => num % 2 === 0);
+
+console.log(newArr);
+//출력 : 짝수만 [2, 4, 6, 8, 10]
+
+//20. 다음일 구하가
+const dday = '2022-02-02';
+
+//quiz
+const date = new Date(dday);
+date.setDate(date.getDate() + 1);
+
+console.log(date.toISOString().slice(0, 10));
