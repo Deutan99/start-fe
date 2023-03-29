@@ -1,3 +1,5 @@
+const { string } = require('prop-types');
+
 //1 문자열 합치기
 const year = 2022;
 const month = 11;
@@ -163,6 +165,43 @@ const newArr = items5.filter((num) => num % 2 === 0);
 
 console.log(newArr);
 //출력 : 짝수만 [2, 4, 6, 8, 10]
+
+//19.배열 필터
+const list = [
+  {
+    id: 1,
+    title: 'JS',
+    isPublic: true,
+  },
+  {
+    id: 2,
+    title: '기본',
+    isPublic: true,
+  },
+  {
+    id: 3,
+    title: 'ecma',
+    isPublic: true,
+  },
+  {
+    id: 4,
+    title: 'dom',
+    isPublic: false,
+  },
+];
+
+// quiz
+// console.log(Object.values(list[1]));
+const returnValue = [];
+
+for (var i = 0; i < list.length; i++) {
+  if (list[i].isPublic === true) {
+    returnValue.push(list[i].title);
+  }
+}
+
+console.log(returnValue);
+// 출력: ['JS','기본','ecma']  isPublic=true 의  title만 뽑기
 
 //20. 다음일 구하가
 const dday = '2022-02-02';
