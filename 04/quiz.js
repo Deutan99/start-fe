@@ -87,7 +87,7 @@ for (let i = pageSize; i < items2.length; i += pageSize + 1) {
 }
 
 console.log(items2.toString());
-// pageSize에 따라 배열값 분리해서 출력
+// pageSize에 따라 배열값 분리해서 출력s
 // pageSize=2 일때는 맨끝에 --- 없어야함
 
 // 출력: a,b,c---d,e,f---g,h,i---j
