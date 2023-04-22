@@ -1,0 +1,3 @@
+GET /v2/search/web?query=jeju HTTP/1.1
+Host: dapi.kakao.com
+Authorization: KakaoAK 887a02f16d19e9713963a22b215e1ed6
