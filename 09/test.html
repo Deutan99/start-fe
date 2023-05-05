@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        text-align: center;
+        zoom: 300%;
+      }
+      .count {
+        color: green;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root">
+      <div class="count">10</div>
+      <button id="plus">plus</button>
+      <button id="minus">minus</button>
+    </div>
+    <script>
+      const $root = document.getElementById('root');
+      const $plus = document.getElementById('plus');
+      const $minus = document.getElementById('minus');
+      const $count = document.querySelector('.count');
+
+      $plus.addEventListener('click', () => {
+        const result = parseInt($count.innerText, 10); //count 숫자로 변환하고, 10진수로 받아오기
+        $count.innerText = result + 1;
+        console.log(result + 1);
+      });
+
+      $minus.addEventListener('click', () => {
+        const result = parseInt($count.innerText, 10); //count 숫자로 변환하고, 10진수로 받아오기
+        $count.innerText = result - 1;
+        console.log(result - 1);
+      });
+    </script>
+  </body>
+</html>
